@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FontAwesome for icons-->
+    <script
+      src="https://kit.fontawesome.com/494ff48399.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="index.css" />
+    <title>Mac OS Big Sur Control Center</title>
+  </head>
+  <body>
+    <div class="grid-container transparent-bg opacity-02 rounded-corners">
+      <!-- Toggles -->
+      <div class="Toggles transparent-bg opacity-04 rounded-corners">
+        <div class="toggle_container">
+          <div class="settings_icon toggle-active" id="toggle-wifi">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <div class="text-container">
+            <h4>Wi-Fi</h4>
+            <p id="label-wifi">Home</p>
+          </div>
+        </div>
+
+        <div class="toggle_container">
+          <div class="settings_icon" id="toggle-bluetooth">
+            <i class="fab fa-bluetooth-b"></i>
+          </div>
+          <div class="text-container">
+            <h4>Bluetooth</h4>
+            <p id="label-bluetooth">Off</p>
+          </div>
+        </div>
+
+        <div class="toggle_container">
+          <div class="settings_icon" id="toggle-airdrop">
+            <i class="far fa-share-square"></i>
+          </div>
+          <div class="text-container">
+            <h4>AirDrop</h4>
+            <p id="label-airdrop">Disabled</p>
+          </div>
+        </div>
+      </div>
+
+      <!--Do Not Disturb-->
+      <div class="DoNotDisturb transparent-bg opacity-04 rounded-corners">
+        <div class="settings_icon" id="toggle-donotdisturb">
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="header">Do Not<br />Disturb</div>
+      </div>
+
+      <!--Keyboard-->
+      <div
+        class="KeyboardBrightness settings_fullbtn transparent-bg opacity-04 rounded-corners"
+      >
+        <i class="far fa-sun"></i>
+        <p>Keyboard<br />Brightness</p>
+      </div>
+
+      <!--Airdisplay-->
+      <div
+        class="AirplayDisplay settings_fullbtn transparent-bg opacity-04 rounded-corners"
+      >
+        <i class="fas fa-tv"></i>
+        <p>Airplay<br />Display</p>
+      </div>
+
+      <!--Main Display-->
+      <div class="Display transparent-bg opacity-04 rounded-corners">
+        <div class="header">Display</div>
+        <div class="range_container">
+          <input
+            type="range"
+            id="display-range"
+            min="0"
+            max="100"
+            step="10"
+            value="60"
+          />
+          <div class="range_icon transparent-bg opacity-02">
+            <i class="fas fa-tv"></i>
+          </div>
+        </div>
+      </div>
+
+      <!--Sound -->
+      <div class="Audio transparent-bg opacity-04 rounded-corners">
+        <div class="header">Sound</div>
+        <div class="range_container">
+          <input type="range" id="audio-range" min="0" max="100" value="40" />
+          <div class="range_icon transparent-bg opacity-02">
+            <i class="fas fa-podcast"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

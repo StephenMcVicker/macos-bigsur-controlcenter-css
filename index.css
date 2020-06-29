@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;800&display=swap');
+
+*::after,
+*::before {
+  /* doing this on before/after can improve the normalizing effect on all elements */
+  box-sizing: border-box;
+}
+
+:root {
+  --containersizeX: 350px;
+  --containersizeY: 400px;
+  --primary-font-color: #212121;
+  --secondary-font-color: #424242ce;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: url(./img/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Base Grid */
+.grid-container {
+
+  position: relative;
+  width: var(--containersizeX);
+  height: var(--containersizeY);
+
+  padding: 0.5rem;
+  color: var(--primary-font-color);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1em 1em;
+  grid-template-areas: "Toggles Toggles DoNotDisturb DoNotDisturb""Toggles Toggles KeyboardBrightness AirplayDisplay""Display Display Display Display""Audio Audio Audio Audio";
+}
+
+.Audio {
+  position: relative;
+  grid-area: Audio;
+}
+
+.Display {
+  position: relative;
+  grid-area: Display;
+}
+
+.DoNotDisturb {
+  position: relative;
+  grid-area: DoNotDisturb;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.KeyboardBrightness {
+  position: relative;
+  grid-area: KeyboardBrightness;
+
+  color: var(--secondary-font-color);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+
+}
+
+.KeyboardBrightness>i {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.AirplayDisplay {
+  position: relative;
+  grid-area: AirplayDisplay;
+
+  color: var(--secondary-font-color);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.AirplayDisplay>i {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.Toggles {
+  position: relative;
+  grid-area: Toggles;
+}
+
+.toggle_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 0.5em;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-container>h4 {
+  margin-top: 0.5em;
+  margin-bottom: -1.2em;
+  margin-left: 0.6em;
+}
+
+.text-container>p {
+  color: var(--secondary-font-color);
+  margin-left: 0.6em;
+}
+
+.settings_icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: -0.2em;
+  background-color: #e7e7e7;
+  color: var(--secondary-font-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.settings_fullbtn {
+  cursor: pointer;
+}
+
+.toggle-active {
+  background-color: #0075FF;
+  color: white;
+}
+
+.header {
+  margin: 1rem;
+  font-weight: bold;
+  font-size: 1.0rem;
+}
+
+.range_container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.range_container>input {
+  margin-left: 1rem;
+  margin-bottom: 1.3em;
+  margin-right: 0.3rem;
+  width: 80%;
+}
+
+.range_icon {
+  position: absolute;
+  right: 0.5em;
+  bottom: 0.5em;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-font-color);
+}
+
+/* Transparent background classes */
+.transparent-bg:before {
+  content: '';
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.opacity-01:before {
+  opacity: 0.1;
+}
+
+.opacity-02:before {
+  opacity: 0.2;
+}
+
+.opacity-03:before {
+  opacity: 0.3;
+}
+
+.opacity-04:before {
+  opacity: 0.4;
+}
+
+.opacity-05:before {
+  opacity: 0.5;
+}
+
+.rounded-corners:before {
+  border-radius: 10px;
+}
